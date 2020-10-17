@@ -127,11 +127,11 @@ public class Arrow implements IXposedHookLoadPackage {
                         super.afterHookedMethod(param);
                         String str1 = (String) param.args[0];
                         if (str1.equals("apns_code")) {
-                            String path = "Pictures/adc_code.txt";
+                            String path = "Pictures/adc_code1.txt";
                             String adc_code = HookInfo.loadFromSDFile(path);
                             param.args[1] = adc_code;
                         } else if (str1.equals("mac_ads")) {
-                            String path = "Pictures/mac.txt";
+                            String path = "Pictures/mac1.txt";
                             String mac = HookInfo.loadFromSDFile(path);
                             param.args[1] = mac;
                         }
@@ -160,7 +160,7 @@ public class Arrow implements IXposedHookLoadPackage {
                             if (user_info != null) {
                                 String token = user_info.getToken();
                                 if (token != null) {
-                                    String path = "Pictures/token.txt";
+                                    String path = "Pictures/token1.txt";
                                     HookInfo.writeToSDFile(token, path);
                                 }
                             }
